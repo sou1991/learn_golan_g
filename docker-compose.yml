@@ -1,0 +1,10 @@
+version: '3'
+services:
+  golibrary:
+    image: golibrary
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    tty: true 
+    volumes: 
+      - .:/go/src/
