@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	//go.modに記述しているpackage/ディレクトリ/パッケージ名※モジュールモードの場合
 	"mymodule/pkg/calc"
+	"runtime"
 )
 //グローバル変数
 var c, python, java bool
@@ -17,7 +19,7 @@ func main(){
 	//変数
 	var str = "local"
 	num := 123
-	
+
 	fmt.Println(str,c,python,java,num)
 	fmt.Println(agree)
 }
