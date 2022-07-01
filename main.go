@@ -5,7 +5,6 @@ import (
 	"math/rand"
 	//go.modに記述しているpackage/ディレクトリ/パッケージ名※モジュールモードの場合
 	"mymodule/pkg/calc"
-	"runtime"
 )
 //グローバル変数
 var c, python, java bool
