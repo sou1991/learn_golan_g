@@ -17,7 +17,7 @@ func (u User) Create() {
 }
 
 func main(){
-	var u Iuser = User{
+	var u Iuser = User{//レシーバー作成
 		Id : 1,
 		Name : "tarou",
 		Age : 20,
