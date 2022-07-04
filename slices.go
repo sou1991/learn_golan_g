@@ -44,4 +44,12 @@ func main(){
 	 for i := 0; i < len(s); i++{
 		fmt.Println(s[i])
 	 }
+
+	 //rangeのほうがつかいそう
+	 rs = string[]{"aa","bb","cc","dd","ee"}
+
+	 for _, v = range rs{
+		fmt.Println(v)
+	 }
+
 }
