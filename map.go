@@ -1,9 +1,8 @@
 package main
 
-import {
+import (
 	"fmt"
-	"golang.org/x/tour/wc"
-}
+)
 
 type Coordinate struct{
 	//東経・北緯
@@ -24,5 +23,13 @@ func main() {
 	//Keyの存在チェック
 	v, ok :=coor["Kobe city"]
 	fmt.Println("The value:", v, "Present?", ok)
-	fmt.Println(coor)
+
+	fmt.Println(returnStructTest())
+}
+
+func returnStructTest() Coordinate{
+	c := Coordinate{
+			34.6911221139, 135.122228306, 
+		}
+	return c
 }
