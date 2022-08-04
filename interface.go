@@ -1,29 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type Iuser interface{
-	Create()
+type Animal struct{
+	Name, Sound string
+}
+
+type IAnimal interface{
+	MakeSound() string
 	//・・・メソッドシグニチャ郡を作る
 }
 
-type User struct {
-	Id, Age int
-	Name, Address string
-}
-
-func (u User) Create() {
-	fmt.Println(u.Id)
+func (animal Animal) MakeSound() string{
+	return animal.Sound
 }
 
 func main(){
-	var u Iuser = User{//レシーバー作成
-		Id : 1,
-		Name : "tarou",
-		Age : 20,
-		Address : "Kobe City",
+	var cat IAnimal = Animal{
+		Name : "ねこ",
+		Sound : "にゃー",
 	}
-	
-	fmt.Printf("uこれ何型??%T\n", u)
-	u.Create()
+	var rion IAnimal = Animal{
+		Name : "ライオン",
+		Sound : "がおー",
+	}
+	var dog IAnimal = Animal{
+		Name : "いぬ",
+		Sound : "ワン",
+	}
+
+	fmt.Println(DoSomeThing(cat))
+	fmt.Println(DoSomeThing(rion))
+	fmt.Println(DoSomeThing(dog))
+}
+
+func DoSomeThing(animal IAnimal) string{
+	return animal.MakeSound()
 }
