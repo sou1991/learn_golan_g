@@ -8,7 +8,7 @@ type IUsersRepository interface{
 	Delete()
 }
 
-struct usersRepository struct{
+type usersRepository struct{
 }
 
 

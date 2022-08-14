@@ -3,6 +3,6 @@ package entity
 
 type User struct{
 	Id      int
-	name   string
+	Name   string
 	Address string
 }
