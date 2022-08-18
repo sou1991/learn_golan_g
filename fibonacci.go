@@ -7,14 +7,14 @@ import "fmt"
 func fibonacci() func() int {
 	pp := 0 //前項
 	p := 1 //項
-	fipo := 0 //フィボナッチ
+	w := 0 
 	
 	return func() int{
-		fipo = p + pp
-	    pp = p
-		p = fipo
-		
-		return fipo
+		w = pp
+		p = p + pp
+		pp = p - pp
+
+		return w
 	}
 }
 
