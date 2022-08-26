@@ -5,6 +5,7 @@ import (
 )
 
 //フィールドみたいな感じ？？interfaceで持っとくとInmemoryのテストクラスで置き換えれる
+//基本的にstructは振る舞い(メソッド)を持たないので、レシーバになる
 type usresController struct{
 	ur repository.IUsersRepository
 }
@@ -21,8 +22,13 @@ func NewUsersController(ur repository.IUsersRepository) IUsersController{
 	return &usresController{ur}
 }
 
-func Find(){
+func (uc usresController) Find(w http.ResponseWriter, r *http.Request){
+	user, err = uc.ur.Find()
 
+	if err != nil{
+		w.WriteHeader(500)
+		return
+	}
 }
 
 func Create(){

@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"github.com/sou1991/learn_golan_g/controller"
 )
-
+//基本的にstructは振る舞い(メソッド)を持たないので、レシーバになる
 type usersRouter struct{
 	uc IUsersController
 }
